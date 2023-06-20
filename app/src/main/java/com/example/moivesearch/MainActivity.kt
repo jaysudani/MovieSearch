@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             if(movieName.isEmpty()){
                 Toast.makeText(this, "Enter Movie Name", Toast.LENGTH_SHORT).show()
             }else{
+                movieName.trim()
                 getSearchedMovie(movieName)
             }
         }
@@ -54,10 +55,9 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.myResponseOfMovieList.observe(this) {
             if(it.Response=="False"){
+                binding.progressBar.visibility = View.INVISIBLE
                 Toast.makeText(this,"Too many results",Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(this,it.Search.toString(),Toast.LENGTH_LONG).show()
-
                 val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(this)
                 binding.rvMovielist.layoutManager=layoutManager
                 rvAdapter = RvAdapter(it.Search)

@@ -58,9 +58,8 @@ class MovieDetail : AppCompatActivity() {
             binding.txvMetascore.text=it.Metascore
             binding.txvRating.text=it.Ratings[0].Value
             binding.txvVotes.text=it.imdbVotes
-
-
-
+            binding.progressBar2.visibility=View.INVISIBLE
+            binding.scrollView.visibility=View.VISIBLE
         }
     }
 }
