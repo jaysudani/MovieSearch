@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="18dp"
+    android:elevation="50dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crd_img"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginRight="8dp"
+            android:elevation="10dp">
+            <ImageView
+                android:id="@+id/imgThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/img_not_available"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Movie Title -->
+        <TextView
+            android:id="@+id/txvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/crd_img"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/crd_img"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="TextNotAvailable"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <!-- Rating -->
+
+        <!-- Genre -->
+
+        <!-- Release Year -->
+        <TextView
+            android:id="@+id/txvrRleaseYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/crd_img"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/montserrat"
+            android:text="TextNotAvailable"
+            android:textColor="@color/year"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

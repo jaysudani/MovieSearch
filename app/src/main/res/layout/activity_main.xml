@@ -7,30 +7,86 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Movie Search"
+            android:textColor="@color/black"
+            android:textSize="35dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="search movie by keyword"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:fontFamily="@font/montserrat"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/movie_search"
-            android:layout_width="match_parent"
+            android:id="@+id/txt_movie"
+            android:layout_width="0dp"
+            android:layout_weight="0.80"
             android:layout_height="50dp"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="10dp"
             android:background="@drawable/rounded_edittext"
-            android:hint="Search"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:hint="movie name"/>
 
         <ImageButton
+            android:id="@+id/btn_search"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_toRightOf="@id/movie_search"
-            android:background="@drawable/roundedcorner"
-            android:src="@drawable/ic_search_35"/>
+            android:src="@drawable/ic_search_35"
+            android:background="@drawable/roundedcorner"/>
+    </LinearLayout>
 
-    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_movielist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </LinearLayout>
